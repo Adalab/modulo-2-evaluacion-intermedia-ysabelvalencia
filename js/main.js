@@ -7,10 +7,10 @@ console.log('hola :)');
 const chooseShape = document.querySelector('.js-choose-shape');
 const btnPlay = document.querySelector('.js-btn-play');
 const textResult = document.querySelector('.js-text-result');
-// const userPlayer = document.querySelector('.js-user-player');
-// const computer = document.querySelector('.js-pc-player');
-// let userPoints = 0;
-// let computerPoints = 0;
+const userPlayer = document.querySelector('.js-user-player');
+const computerPlayer = document.querySelector('.js-pc-player');
+let userPoints = 0;
+let computerPoints = 0;
 
 ///----------Funciones----------///
 function userChoose() {
@@ -41,15 +41,24 @@ function pcChoose() {
 function userVsPc(userChoose, pcChoose) {
   if (userChoose === 'scissor' && pcChoose === 'paper') {
     textResult.innerHTML = '¡Has Ganado!';
+    userPoints++;
   } else if (userChoose === 'rock' && pcChoose === 'scissor') {
     textResult.innerHTML = '¡Has Ganado!';
+    userPoints++;
   } else if (userChoose === 'paper' && pcChoose === 'rock') {
     textResult.innerHTML = '¡Has Ganado!';
+    userPoints++;
   } else if (userChoose === pcChoose) {
     textResult.innerHTML = 'Empate';
   } else {
     textResult.innerHTML = 'Perdiste';
+    computerPoints++;
   }
+}
+
+function showPoints() {
+  userPlayer.innerHTML = userPoints;
+  computerPlayer.innerHTML = computerPoints;
 }
 
 ///----------Funciones manejadoras eventos----------///
@@ -58,6 +67,7 @@ function handleClickPlay() {
   const userChoice = userChoose();
   const pcChoice = pcChoose();
   userVsPc(userChoice, pcChoice);
+  showPoints();
 }
 
 console.log();
