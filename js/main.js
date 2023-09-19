@@ -35,6 +35,7 @@ function pcChoose() {
   }
 
   return pcChooseValue;
+  console.log(randomNumber);
 }
 
 function userVsPc(userChoose, pcChoose) {
@@ -54,10 +55,12 @@ function userVsPc(userChoose, pcChoose) {
 ///----------Funciones manejadoras eventos----------///
 
 function handleClickPlay() {
-  userChoose();
-  pcChoose();
-  userVsPc(userChoose, pcChoose);
+  const userChoice = userChoose();
+  const pcChoice = pcChoose();
+  userVsPc(userChoice, pcChoice);
 }
+
+console.log();
 
 ///----------Eventos----------///
 
