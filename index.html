@@ -4,25 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Módulo 2:Evaluación intermedia</title>
+    <script
+      src="https://kit.fontawesome.com/bcc6ce623e.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <header>
-      <h1>Juego piedra, papel y tijera</h1>
+    <header class="header">
+      <h1 class="headerTitle">Piedra, papel y tijera</h1>
+      <div class="iconsBox">
+        <i class="fa-regular fa-hand fa-2xl"></i>
+        <i class="fa-regular fa-hand-back-fist fa-2xl"></i>
+        <i class="fa-regular fa-hand-scissors fa-2xl"></i>
+      </div>
+      <p class="headerSubtitle">Juego online</p>
     </header>
-    <main>
-      <p>Introduce aquí tu jugada:</p>
-      <select class="js-choose-shape" name="" id="">
-        <option value="">Seleccione su jugada</option>
-        <option value="rock">Piedra</option>
-        <option value="paper">Papel</option>
-        <option value="scissor">Tijera</option>
-      </select>
-      <button class="js-btn-play">Jugar</button>
-      <button class="js-btn-reset hidden">Reset</button>
-      <p class="js-text-result">Vamos a jugar!</p>
-      <p>Jugador: <span class="js-user-player">0</span></p>
-      <p>Computadora: <span class="js-pc-player">0</span></p>
+    <main class="main">
+      <p class="mainText">Introduce aquí tu jugada:</p>
+      <form class="form">
+        <select class="select js-choose-shape" name="select" id="select">
+          <option value="">Seleccione su jugada</option>
+          <option value="rock">Piedra</option>
+          <option value="paper">Papel</option>
+          <option value="scissor">Tijera</option>
+        </select>
+        <button class="btnPlay js-btn-play">Jugar</button>
+        <button class="btnReset js-btn-reset hidden">Reset</button>
+      </form>
+      <p class="result js-text-result">Vamos a jugar!</p>
+
+      <p class="playerResult">
+        <i class="icon fa-solid fa-user"></i>Jugador:
+        <span class="js-user-player">0</span>
+      </p>
+      <p class="pcResult">
+        <i class="icon fa-solid fa-robot"></i>Computadora:
+        <span class="js-pc-player">0</span>
+      </p>
     </main>
     <script src="./js/main.js"></script>
   </body>

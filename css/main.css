@@ -1,3 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.50%;
+}
+
+.header {
+    background-color: #026f6e;
+    color: white;
+    display: flex;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerTitle {
+    font-size:3rem;
+    
+}
+
+.headerSubtitle {
+    font-size: 2rem;
+}
+
+.main {
+    background-color: #1ca39e;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.mainText {
+    font-size: 2rem;
+    padding-top: 2rem;
+    color: #160d18;
+    font-weight: 900;
+    border-bottom: 0.3rem solid #160d18;
+}
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap:0.5rem;
+}
+
+.select, .btnPlay, .btnReset{
+    border-radius: 5rem;
+    padding: 0.5rem 1rem;
+    background-color: #160d18;
+    color:white;
+    border:0;
+    cursor: pointer;
+}
+.btnPlay:hover {
+    background-color: #09456c;
+    color: white;
+    font-weight: 800;
+    
+}
+.btnReset:hover {
+    background-color: #09456c;
+    color: white;
+    font-weight: 800;
+    
+}
+.result {
+    font-size: 2rem;
+    color: white;
+    font-weight: 900;
+    border-bottom: 0.4rem solid white;
+    padding: 2rem;
+}
+
+.playerResult, .pcResult {
+    padding-top: 2rem;
+    font-size: 2rem;
+    color: #160d18;
+    font-weight: 900;
+}
+
+span {
+    color:#09456c;;
+}
+
+.icon {
+    padding: 1rem;
+}
+
+.iconsBox {
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+    padding: 2rem;
+}
+
+
+  first-line
 .hidden {
     display: none;
 }

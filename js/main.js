@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('hola :)');
-
 ///----------Query Selectors------///
 
 const chooseShape = document.querySelector('.js-choose-shape');
@@ -42,20 +40,24 @@ function pcChoose() {
 
 function userVsPc(userChoose, pcChoose) {
   if (userChoose === 'scissor' && pcChoose === 'paper') {
-    textResult.innerHTML = '¡Has Ganado!';
+    paintHTML('¡Has Ganado!');
     userPoints++;
   } else if (userChoose === 'rock' && pcChoose === 'scissor') {
-    textResult.innerHTML = '¡Has Ganado!';
+    paintHTML('¡Has Ganado!');
     userPoints++;
   } else if (userChoose === 'paper' && pcChoose === 'rock') {
-    textResult.innerHTML = '¡Has Ganado!';
+    paintHTML('¡Has Ganado!');
     userPoints++;
   } else if (userChoose === pcChoose) {
-    textResult.innerHTML = 'Empate';
+    paintHTML('Empate');
   } else {
-    textResult.innerHTML = 'Perdiste';
+    paintHTML('¡Has perdido!');
     computerPoints++;
   }
+}
+
+function paintHTML(message) {
+  textResult.innerHTML = message;
 }
 
 function showPoints() {
@@ -73,7 +75,8 @@ function endGame() {
 
 ///----------Funciones manejadoras eventos----------///
 
-function handleClickPlay() {
+function handleClickPlay(event) {
+  event.preventDefault();
   const userChoice = userChoose();
   const pcChoice = pcChoose();
   userVsPc(userChoice, pcChoice);
@@ -81,10 +84,14 @@ function handleClickPlay() {
   endGame();
 }
 
-console.log();
-
+function handleClickReset(event) {
+  event.preventDefault();
+  userPoints = 0;
+  computerPoints = 0;
+  games = 0;
+}
 ///----------Eventos----------///
 
 btnPlay.addEventListener('click', handleClickPlay);
 
-// btnReset.addEventListener('click', handleClickReset);
+btnReset.addEventListener('click', handleClickReset);
