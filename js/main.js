@@ -67,7 +67,7 @@ function showPoints() {
 
 function endGame() {
   games++;
-  if (games === 10) {
+  if (games >= 10) {
     btnPlay.classList.add('hidden');
     btnReset.classList.remove('hidden');
   }
@@ -86,9 +86,14 @@ function handleClickPlay(event) {
 
 function handleClickReset(event) {
   event.preventDefault();
+  btnPlay.classList.remove('hidden');
+  btnReset.classList.add('hidden');
+  paintHTML('Vamos a jugar');
   userPoints = 0;
   computerPoints = 0;
   games = 0;
+  showPoints();
+  endGame();
 }
 ///----------Eventos----------///
 
